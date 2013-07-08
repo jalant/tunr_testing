@@ -1,0 +1,11 @@
+%h1 Create a new artist
+
+#new_artist 
+	= form_for @artist do |a|
+		= a.label :name
+		= a.text_field :name 
+		= a.label :url
+		= a.text_field :url
+
+
+		= a.submit

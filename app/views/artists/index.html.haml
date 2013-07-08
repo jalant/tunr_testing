@@ -1,0 +1,24 @@
+%h2 Artists
+
+= link_to 'New Artist', new_artist_path
+
+%table
+	%thead 
+		%th Artist Id 
+		%th Artist Name 
+		%th Artist Url
+		%th 
+	%tbody
+		- @artists.each do |artist|
+			%tr
+				%td 
+					=artist.id
+				%td 
+					=link_to artist.name, artist
+				%td
+					=artist.url
+				%td
+					=button_to('Delete', artist_path(artist), method: :delete, class: 'dlt-button', id: artist.id)
+					
+			
+					
